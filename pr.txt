@@ -1,1 +1,32 @@
-13170277	Carlos Eduardo Guzm·n Acevedo	carlosguz
+13170277	Carlos Eduardo Guzm√°n Acevedo	carlosguz
+
+// palindromo.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream> 
+#include <iostream> 
+#define LIM 30 
+using namespace std;
+int Palindroma(char[]);
+int main()
+{
+	char palabra[LIM];
+
+	cout << "Ingrese una palabra: ";
+	cin >> palabra;
+
+	if (Palindroma(palabra))
+		cout << palabra << " es palindroma" << endl;
+	else cout << palabra << " no es palindroma" << endl;
+
+	return 0;
+}
+
+int Palindroma(char palabra[])
+{
+	int nroLetras = strlen(palabra);
+	for (int i = 0; i<nroLetras; i++)
+		if (palabra[i] != palabra[nroLetras - i - 1])
+			return 0;
+	return 1;
+}
